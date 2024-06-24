@@ -24,8 +24,8 @@ pipeline {
         SONAR_URL = "http://172.16.30.168:9000"
       }
       steps {
-        withCredentials([string(credentialsId: 'admin', variable: 'sqa_e9842cdb20c3b31ee98271474e6627509e0f51f8')]) {
-          sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${http://172.16.30.168:9000}'
+        withCredentials([string(credentialsId: 'admin', variable: 'sqa_cb63162823d896ed28001f6ed6bdf69804756667')]) {
+          sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.login=$sqa_cb63162823d896ed28001f6ed6bdf69804756667 -Dsonar.host.url=${http://172.16.30.168:9000}'
         }
       }
     }
